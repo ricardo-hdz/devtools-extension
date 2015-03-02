@@ -1,0 +1,11 @@
+#errorsPanel {
+	
+}
+
+#errorsPanel div.errorLine {
+	font-weight: bold;
+}
+
+.errorLine {
+	font-weight: bold;
+}

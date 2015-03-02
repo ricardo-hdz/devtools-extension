@@ -16,8 +16,14 @@
 
     // Listen to messages from the background page
     port.onMessage.addListener(function (message) {
-      document.querySelector('#insertmessagebutton').innerHTML = message.content;
-      // port.postMessage(message);
+        var errorsPanel = document.querySelector("#errorsPanel");
+        for (var i = 0, error; (error = message[i]); i++) {
+            var element = document.createElement('div');
+            element.className = 'errorLine';
+            element.style.color = 'red';
+            element.innerHTML = error;
+            errorsPanel.appendChild(element);
+        }
     });
 
 }());
